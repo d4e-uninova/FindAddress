@@ -48,13 +48,9 @@ void GetAddressOfData(DWORD pid, const char *data, size_t len, int startAddress,
 API int FindAddress(int pid, char *data,int startAddress,int endAddress,int** ptrArr)
 {
 
-	int wr;
 	int pos = 0;
 	*ptrArr= new int[MAXPTR];
 	DWORD pid_ = (DWORD)pid;
 	GetAddressOfData(pid_, data, sizeof(data), startAddress,endAddress,*ptrArr,&pos);
-	
-
 	return pos;
-
 }
